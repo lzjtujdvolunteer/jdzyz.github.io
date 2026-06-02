@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>禁毒知识在线竞赛</title>
+<style>
+*{margin:0;padding:0;font-family:微软雅黑}
+header{background:#b81c22;color:#fff;padding:25px;text-align:center}
+nav{background:#333;padding:14px;text-align:center}
+nav a{color:#fff;margin:0 12px;text-decoration:none}
+.wrap{max-width:900px;margin:30px auto;padding:0 20px}
+.q-box{border:1px #ddd solid;padding:18px;margin:15px 0;border-radius:6px}
+#submit{background:#b81c22;color:#fff;border:none;padding:10px 30px;border-radius:5px;cursor:pointer;font-size:16px}
+#res{margin-top:20px;font-size:18px;color:#b81c22}
+footer{margin-top:50px;padding:18px;background:#333;color:#fff;text-align:center;font-size:14px}
+</style>
+</head>
+<body>
+<header><h2>青春无毒·陇原守护｜禁毒线上知识自测</h2></header>
+<nav>
+    <a href="index.html">首页</a>
+    <a href="brand.html">品牌介绍</a>
+    <a href="video.html">视频专区</a>
+    <a href="register.html">志愿者报名</a>
+</nav>
+<div class="wrap">
+    <div class="q-box">
+        <p>1.“奶茶、邮票、跳跳糖”属于（）</p>
+        <label><input type="radio" name="q1" value="A">传统毒品</label>
+        <label><input type="radio" name="q1" value="B">新型伪装毒品</label>
+    </div>
+    <div class="q-box">
+        <p>2.发现身边疑似涉毒行为第一时间向（）举报</p>
+        <label><input type="radio" name="q2" value="A">110</label>
+        <label><input type="radio" name="q2" value="B">120</label>
+    </div>
+    <div class="q-box">
+        <p>3.老年人是家庭禁毒守门人，需警惕保健品伪装毒品</p>
+        <label><input type="radio" name="q3" value="A">正确</label>
+        <label><input type="radio" name="q3" value="B">错误</label>
+    </div>
+    <button id="submit">提交答卷</button>
+    <div id="res"></div>
+</div>
+<footer>依托禁毒智刃·揭榜挂帅挑战赛题库改编</footer>
+<script>
+document.getElementById('submit').onclick=function(){
+let score=0;
+let q1=document.querySelector('input[name="q1"]:checked')?.value;
+let q2=document.querySelector('input[name="q2"]:checked')?.value;
+let q3=document.querySelector('input[name="q3"]:checked')?.value;
+if(q1==='B')score++;
+if(q2==='A')score++;
+if(q3==='A')score++;
+document.getElementById('res').innerText=`本次得分：${score}/3`;
+}
+</script>
+</body>
+</html>
